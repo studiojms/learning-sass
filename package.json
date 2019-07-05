@@ -1,0 +1,28 @@
+{
+  "name": "learning-sass",
+  "version": "1.0.0",
+  "description": "Getting started with sass",
+  "scripts": {
+    "watch": "node-sass -w src/sass -o src/css",
+    "build": "node-sass src/sass/estilos.scss -o src/css",
+    "start": "http-server src -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiojms/learning-sass.git"
+  },
+  "keywords": [
+    "sass"
+  ],
+  "author": "studiojms",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/studiojms/learning-sass/issues"
+  },
+  "homepage": "https://github.com/studiojms/learning-sass#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "http-server": "^0.11.1"
+  }
+}
