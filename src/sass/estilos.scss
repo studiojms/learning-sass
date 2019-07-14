@@ -1,6 +1,23 @@
+// define variables
 $default-color: #c24e4b;
 $secondary-color: #1e2c35;
 $white-color: #ffffff;
+
+// define mixins
+@mixin round-border($radius: 0.3em) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin button-shadow {
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
 
 /** Geral **/
 body {
@@ -48,24 +65,24 @@ header .container {
   top: -0.5em;
   font-size: 1.2em;
   font-weight: lighter;
-}
 
-.menu-opcoes ul {
-  padding-left: 0;
-}
+  ul {
+    padding-left: 0;
+  }
 
-.menu-opcoes li {
-  display: inline-block;
-  width: 5em;
-}
+  li {
+    display: inline-block;
+    width: 5em;
+  }
 
-.menu-opcoes a {
-  color: $white-color;
-  text-decoration: none;
-}
+  a {
+    color: $white-color;
+    text-decoration: none;
 
-.menu-opcoes a:hover {
-  text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /** Destaque **/
@@ -99,9 +116,8 @@ header .container {
   border: 0;
   padding: 0.6em;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include round-border(50px);
+  @include button-shadow;
   font-weight: bold;
 }
 
@@ -137,9 +153,7 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   background-position: center;
   margin: 1em 1.5em 0 0;
 }
@@ -199,22 +213,22 @@ header .container {
 
 .itens-plano {
   padding-left: 1.2em;
-}
 
-.itens-plano li {
-  font-size: 1em;
-  list-style: none;
-  border-bottom: 1px solid #acacac;
-  padding: 0.5em;
-  width: 14.8em;
-}
+  li {
+    font-size: 1em;
+    list-style: none;
+    border-bottom: 1px solid #acacac;
+    padding: 0.5em;
+    width: 14.8em;
 
-.itens-plano li:last-child {
-  border: 0;
-}
+    &:last-child {
+      border: 0;
+    }
+  }
 
-.itens-plano span {
-  float: right;
+  span {
+    float: right;
+  }
 }
 
 .plano button {
@@ -224,9 +238,8 @@ header .container {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include round-border;
+  @include button-shadow;
   margin-left: 2em;
 }
 
@@ -308,8 +321,7 @@ textarea {
   width: 100%;
   margin-bottom: 0.8em;
   padding: 4px 8px;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include round-border;
   border: 2px solid #ccc;
 }
 
@@ -321,9 +333,8 @@ textarea {
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include round-border;
+  @include button-shadow;
 }
 
 /** Footer **/
@@ -403,9 +414,7 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   margin-left: 1em;
 }
 
