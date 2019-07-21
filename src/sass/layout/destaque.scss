@@ -30,6 +30,6 @@
   padding: 0.6em;
   font-size: 1.2em;
   @include round-border(50px);
-  @include button-shadow;
+  @extend %button-shadow;
   font-weight: bold;
 }

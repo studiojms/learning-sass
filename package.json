@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Getting started with sass",
   "scripts": {
-    "watch": "node-sass -w src/sass -o src/css",
+    "watch": "node-sass -w src/sass/estilos.scss -o src/css",
     "build": "node-sass src/sass/estilos.scss -o src/css",
     "start": "http-server src -c-1"
   },
